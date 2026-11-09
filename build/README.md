@@ -29,7 +29,7 @@ python3 build/assemble.py data.json index.html         # rakit ulang
   **Semua** transaksi (termasuk antar salesman aktif) diatribusikan ke pemilik outlet saat ini menurut master FJP. AWALUDDIN di FJP = ANDIKA SAPUTRA. Outlet di luar FJP → salesman aktif dengan omzet terbesar di outlet itu 12 bulan terakhir, lalu sepanjang histori, lalu terbesar di kabupaten/cabang. `gtDaily` dibagi proporsional per salesman asal × bulan × merek.
 - Filter cabang memakai cabang outlet. GT/MT mengikuti channel item. Omzet distributor = DPP net; MDS = Value valid. KPI aktivitas memakai Valid_Aktivitas = 1.
 - EC/day YTD = ΣEC ÷ Σhari; Line/EA YTD = rata-rata rasio bulanan. HiLo target varian: Parepare ≥5, Mamuju ≥3. Nutrisari target ≥10 varian.
-- Retail Modern = 35 outlet; item fokus MT 20 & GT 11; stockist 14 nama (menunggu daftar resmi 13 kode).
+- Retail Modern = 35 outlet; item fokus MT 20 & GT 11; stockist 13 nama: 14 nama dashboard lama dikurangi TK.MULYA/PASAR LAKESSI (bukan stockist lagi, 9 Nov 2026).
 
 ## PDF (9 Nov 2026)
 Semua tombol PDF mengikuti filter cabang & salesman di atas halaman (tidak ada filter tambahan di panel).

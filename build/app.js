@@ -848,7 +848,7 @@ function viewStockist(root) {
   hd.append(l, h('p', 'pj-page-meta', 'Filter aktif: ' + BULAN[m - 1] + ' ' + y)); root.append(hd);
   const sel = h('select', 'pj-select'); sel.append(new Option('SEMUA STOCKIST', '-1')); [...ids].forEach((o) => sel.append(new Option(OUT[o].n + ' (' + CABNAMA[OUT[o].cab] + ')', o))); sel.value = String(S.stk ?? -1);
   sel.addEventListener('change', () => { S.stk = +sel.value; render(); });
-  const bar = h('div', 'pj-inline'); bar.append(h('label', 'pj-lbl', 'Pilih toko stockist'), sel, h('span', 'pj-note', D.stockist.length + ' stockist dari dashboard lama · daftar 13 kode closing Oktober belum diterima')); root.append(bar);
+  const bar = h('div', 'pj-inline'); bar.append(h('label', 'pj-lbl', 'Pilih toko stockist'), sel, h('span', 'pj-note', D.stockist.length + ' stockist aktif · TK Mulya dikeluarkan (bukan stockist lagi, 9 Nov 2026)')); root.append(bar);
   const set = S.stk >= 0 ? new Set([S.stk]) : ids;
   const sc = scope('gt', { key: 'stk' + (S.stk ?? -1), cab: 'ALL', sales: -1, brand: 'ALL', outlets: set });
   const scN = scope('gt', { key: 'stkNS' + (S.stk ?? -1), cab: 'ALL', sales: -1, brand: 'NUTRISARI', outlets: set });
