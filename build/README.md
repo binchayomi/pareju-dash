@@ -29,6 +29,7 @@ python3 build/assemble.py data.json index.html         # rakit ulang
   **Semua** transaksi (termasuk antar salesman aktif) diatribusikan ke pemilik outlet saat ini menurut master FJP. AWALUDDIN di FJP = ANDIKA SAPUTRA. Outlet di luar FJP → salesman aktif dengan omzet terbesar di outlet itu 12 bulan terakhir, lalu sepanjang histori, lalu terbesar di kabupaten/cabang. `gtDaily` dibagi proporsional per salesman asal × bulan × merek.
 - Filter cabang memakai cabang outlet. GT/MT mengikuti channel item. Omzet distributor = DPP net; MDS = Value valid. KPI aktivitas memakai Valid_Aktivitas = 1.
 - EC/day YTD = ΣEC ÷ Σhari; Line/EA YTD = rata-rata rasio bulanan. HiLo target varian: Parepare ≥5, Mamuju ≥3. Nutrisari target ≥10 varian.
+- NS Tea = 6 SKU (dikonfirmasi 9 Nov 2026): NS LEMON / PEACH / LYCHEE / ORANGE / BLACKCURRANT / APPLE TEA PLS 4PX40SX11G (flag `tea` di `items`). Refill 400G dan Mix 4 Rasa tidak termasuk.
 - Retail Modern = 35 outlet; item fokus MT 20 & GT 11; stockist 13 nama: 14 nama dashboard lama dikurangi TK.MULYA/PASAR LAKESSI (bukan stockist lagi, 9 Nov 2026).
 
 ## PDF (9 Nov 2026)

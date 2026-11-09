@@ -892,12 +892,12 @@ function viewDpi(root) {
   const Q = quarter('gt', f, y, q, ymOf(y, m)); if (!Q) { root.append(h('p', 'pj-note', 'Tidak ada data kuartal ini.')); return; }
   const lbl = qLabel(q, Q.a, Q.b), hl = S.cab === 'MAMUJU' ? '≥3' : S.cab === 'PAREPARE' ? '≥5' : '≥5/≥3';
   const s = section(root, 'Performa kuartal berjalan', lbl, 'Tidak mengikuti filter merek', 'pj-line-blue'); const g = grid(s, 'pj-g5');
-  kpi(g, 'Omzet ' + lbl, F.rp(Q.net), 'Semua merek'); kpi(g, 'Omzet HiLo', F.rp(Q.hilo), 'Merek HiLo'); kpi(g, 'Omzet NS Tea', F.rp(Q.tea), '6 SKU NS Tea powder (kandidat)');
+  kpi(g, 'Omzet ' + lbl, F.rp(Q.net), 'Semua merek'); kpi(g, 'Omzet HiLo', F.rp(Q.hilo), 'Merek HiLo'); kpi(g, 'Omzet NS Tea', F.rp(Q.tea), '6 SKU NS Tea: Lemon, Peach, Lychee, Orange, Blackcurrant, Apple');
   kpi(g, 'EA Nutrisari', F.n(Q.eaNs), 'Distinct outlet kuartal');
   kpi(g, 'EA Nutrisari ≥10 varian', F.n(Q.ns10), F.pct(div(Q.ns10, Q.ea)) + ' dari total EA · target 40%', stat(div(Q.ns10, Q.ea), BENCH.nsPct));
   kpi(g, 'EA HiLo', F.n(Q.eaHl), 'Distinct outlet kuartal');
   kpi(g, 'EA HiLo ' + hl + ' varian', F.n(Q.hlT), F.pct(div(Q.hlT, Q.ea)) + ' dari total EA · target 50%', stat(div(Q.hlT, Q.ea), BENCH.hiloPct));
-  kpi(g, 'EA HiLo School', F.n(Q.eaSchool), 'Item berawalan HiLo School'); kpi(g, 'EA NS Tea', F.n(Q.eaTea), '6 SKU NS Tea powder (kandidat)');
+  kpi(g, 'EA HiLo School', F.n(Q.eaSchool), 'Item berawalan HiLo School'); kpi(g, 'EA NS Tea', F.n(Q.eaTea), '6 SKU NS Tea: Lemon, Peach, Lychee, Orange, Blackcurrant, Apple');
   const s2 = section(root, 'Parameter pendukung', 'Distribusi SKU', lbl); const g2 = grid(s2, 'pj-g3');
   kpi(g2, 'Total EA', F.n(Q.ea), 'Pembagi target depth merek'); kpi(g2, 'Line/EA', F.n2(Q.lineEa), 'Rata-rata Line/EA bulanan'); kpi(g2, 'Line/RO', F.n2(Q.lineRo), 'Distinct outlet–SKU kuartal ÷ EA kuartal');
   // grafik per kuartal
