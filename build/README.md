@@ -9,6 +9,7 @@ Dashboard BCP Parepare & BCP Mamuju (GT, MT, MDS). `index.html` di root repo ada
 | `app.js` | Seluruh mesin hitung, tampilan, dan mesin PDF (tanpa library luar). |
 | `assemble.py` | Merakit `index.html` dari `data.json` + `template.html` + `app.js`. |
 | `extract.py` | Mengambil `data.json` dari `index.html` yang sedang tayang. |
+| `update_sales.py` | Menambah/mengganti satu bulan dari Excel "DATABASE SO" (update belum closing atau closing) ke `data.json`, plus baris CSV untuk Database Penjualan Pareju. |
 | `remap_sales.py` | Atribusi salesman (lihat aturan di bawah). Dijalankan ke data mentah sebelum dirakit. |
 
 ```
@@ -57,3 +58,6 @@ Indeks bulan `ym` = (tahun − 2023) × 12 + (bulan − 1); hari = jumlah hari s
 | `mds`, `mdsDim` | transaksi MDS dan dimensinya |
 
 Catatan: skrip pembentuk `data.json` dari file sumber dibuat di sesi lama dan belum ada di repo. Saat closing November, skrip itu dibuat ulang mengikuti skema di atas lalu ditambahkan ke `build/`.
+
+## Log update
+- 10 Nov 2026: update November belum closing (transaksi 2–9 Nov). GT Nov Parepare Rp393.102.030 / EA 217; Mamuju Rp39.400.970 / EA 45. Item baru NS MILKY MANGO PLS 4PX40SX11G (kode distributor 17/010102610C, belum ada di mapping NFI → dipetakan manual sebagai Nutrisari GT). `meta.partial = true` → header "Update s.d. … · belum closing".

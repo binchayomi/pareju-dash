@@ -445,7 +445,7 @@ function yearSeries(fn, upToYear = S.year) {
 function pageHead(root, title) {
   const hd = h('div', 'pj-page-head');
   const l = h('div'); l.append(h('p', 'pj-eyebrow', CABNAMA[S.cab] + ' · ' + brandName()), h('h1', 'pj-page-title', title + ' · ' + scopeName()));
-  hd.append(l, h('p', 'pj-page-meta', 'Filter aktif: ' + BULAN[S.month - 1] + ' ' + S.year + (ymOf(S.year, S.month) === CLOSE_YM ? ' · data closing' : '')));
+  hd.append(l, h('p', 'pj-page-meta', 'Filter aktif: ' + BULAN[S.month - 1] + ' ' + S.year + (ymOf(S.year, S.month) === CLOSE_YM ? (D.meta.partial ? ' · data berjalan s.d. ' + D.meta.closing.split('-').reverse().join('-') + ' (belum closing)' : ' · data closing') : '')));
   root.append(hd);
 }
 
@@ -565,8 +565,8 @@ function dataHealth(root) {
   const s = section(root, 'Data health & freshness', 'Kesiapan data · rekonsiliasi closing', 'Dihitung ulang dari file');
   const g = grid(s, 'pj-g4');
   const rk = D.rekon.filter((r) => S.cab === 'ALL' || r.cab === S.cab);
-  kpi(g, 'Tanggal transaksi terakhir', D.meta.closing, 'Sesuai closing', 'good');
-  kpi(g, 'Periode sumber', ymLabel(CLOSE_YM), 'Closing');
+  kpi(g, 'Tanggal transaksi terakhir', D.meta.closing, D.meta.partial ? 'Update berjalan, belum closing' : 'Sesuai closing', D.meta.partial ? 'warn' : 'good');
+  kpi(g, 'Periode sumber', ymLabel(CLOSE_YM), D.meta.partial ? 'Belum closing' : 'Closing');
   kpi(g, 'Baris bulan closing', F.n(sum(rk.map((r) => r.rows))), F.n(sum(rk.map((r) => r.sales_rows))) + ' sales · ' + F.n(sum(rk.map((r) => r.retur_rows))) + ' retur');
   const elig = fjpEligible(S.cab, -1);
   kpi(g, 'Master FJP eligible', F.n(elig.length), 'Tanpa slot NOO · ' + F.n(elig.filter((r) => r.o < 0).length) + ' belum pernah transaksi');
@@ -1157,7 +1157,7 @@ function PdfDoc(W, H) {
   };
   return d;
 }
-const pdfStamp = () => { const t = new Date(); return 'Dashboard Pareju | closing ' + D.meta.closing.split('-').reverse().join('-') + ' | dicetak ' + t.getDate() + ' ' + BLN[t.getMonth()] + ' ' + t.getFullYear(); };
+const pdfStamp = () => { const t = new Date(); return 'Dashboard Pareju | ' + (D.meta.partial ? 'data s.d. ' : 'closing ') + D.meta.closing.split('-').reverse().join('-') + ' | dicetak ' + t.getDate() + ' ' + BLN[t.getMonth()] + ' ' + t.getFullYear(); };
 function pdfSave(blob, file) { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.replace(/[^\w.\- ]+/g, '_').replace(/\s+/g, '_') + '.pdf'; document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000); }
 
 /* cfg: {title, sub, cols:[{l, w, a:'l'|'r'|'c', v:(row)=>text}], rows, group:(row)=>label, file, note, empty} */
@@ -1462,7 +1462,7 @@ const VIEWFN = { gt: { overview: viewOverview, dpi: viewDpi, salesman: viewSales
 function buildHeader() {
   const hd = document.getElementById('pj-head');
   const closing = new Date(D.meta.closing + 'T00:00:00Z');
-  hd.querySelector('.pj-closing').textContent = 'Closing ' + closing.getUTCDate() + ' ' + BULAN[closing.getUTCMonth()] + ' ' + closing.getUTCFullYear();
+  hd.querySelector('.pj-closing').textContent = (D.meta.partial ? 'Update s.d. ' : 'Closing ') + closing.getUTCDate() + ' ' + BULAN[closing.getUTCMonth()] + ' ' + closing.getUTCFullYear() + (D.meta.partial ? ' · belum closing' : '');
   hd.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => { S.tab = b.dataset.tab; render(); window.scrollTo(0, 0); }));
   document.getElementById('pj-method').addEventListener('click', (e) => { const p = document.getElementById('pj-method-panel'); p.hidden = !p.hidden; e.currentTarget.setAttribute('aria-expanded', String(!p.hidden)); });
 }
@@ -1510,7 +1510,7 @@ function render() {
     main.replaceChildren();
     try { const cur = S.tab === 'gt' ? S.view : S.tab === 'mt' ? S.mtView : S.mdsView; VIEWFN[S.tab][cur](main); }
     catch (e) { console.error(e); main.append(h('p', 'pj-error', 'Halaman gagal dihitung: ' + e.message)); }
-    const ft = h('footer', 'pj-foot'); ft.append(h('span', '', 'Sumber: ' + D.meta.sumber.join(' · ')), h('span', '', 'File dibuat ' + D.meta.generated + ' · data closing ' + D.meta.closing)); main.append(ft);
+    const ft = h('footer', 'pj-foot'); ft.append(h('span', '', 'Sumber: ' + D.meta.sumber.join(' · ')), h('span', '', 'File dibuat ' + D.meta.generated + (D.meta.partial ? ' · data s.d. ' : ' · data closing ') + D.meta.closing + (D.meta.partial ? ' (belum closing)' : ''))); main.append(ft);
   }, 10);
 }
 buildHeader(); render();
