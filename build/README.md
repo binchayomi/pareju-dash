@@ -33,7 +33,7 @@ python3 build/assemble.py data.json index.html         # rakit ulang
 - NS Tea = 6 SKU (dikonfirmasi 9 Nov 2026): NS LEMON / PEACH / LYCHEE / ORANGE / BLACKCURRANT / APPLE TEA PLS 4PX40SX11G (flag `tea` di `items`). Refill 400G dan Mix 4 Rasa tidak termasuk.
 - Retail Modern (11 Nov 2026) = 23 toko non klasifikasi pilihan pengguna. Parepare (13): CV Berkat Restu Bunda, CV Cahaya Mallusetasi, 77 Mart, CV Berkah Kita, 27 Mart, Misi Pasaraya Kota Barru, Prima Mart, Misi Pasaraya Sidrap, Koperasi DDI Mangkoso, Misi Pasaraya Madello, Andika Mart, CV Cahaya Ujung, Misi Pasaraya Pekkae. Mamuju (10): Goo Mart, Kupa One Mart Topoyo, Anugrah Topoyo, Sinar Belawa Maju, Wilda TK, Rahma, Oke Mart, Pantai Karossa Mart, Hello Mart, Belawa Maju 3.
 - Toko MT klasifikasi (bukan bagian Retail Modern): Parepare — Sejahtera Parepare, Sejahtera Pinrang, Varia Baru Mart, TK Baru Enrekang, Toserba Diana (DIANA/JL.POROS TAKALASI), Sinar Manis Rappang; Mamuju — CV Alam Jaya, Family Mart (FAMILY (PKP)). Selain itu = non klasifikasi.
-- Item fokus MT 20 & GT 11; stockist 13 nama: 14 nama dashboard lama dikurangi TK.MULYA/PASAR LAKESSI (bukan stockist lagi, 9 Nov 2026).
+- Item fokus MT 20 & GT 15 (11 dari dashboard lama + HI LO SCHOOL COKELAT SUSU PLS 12RX10SX30G, HI LO SCHOOL STRAWBERRY PLS 12RX10SX27G, HI LO SCHOOL VANILLA SUSU PLS 12RX10SX27G, HI LO 3IN1 SUSU COKLAT BELGIA PLS 12RX10SX25G; 11 Nov 2026); stockist 13 nama: 14 nama dashboard lama dikurangi TK.MULYA/PASAR LAKESSI (bukan stockist lagi, 9 Nov 2026).
 
 ## PDF (9 Nov 2026)
 Semua tombol PDF mengikuti filter cabang & salesman di atas halaman (tidak ada filter tambahan di panel).
@@ -62,5 +62,6 @@ Indeks bulan `ym` = (tahun − 2023) × 12 + (bulan − 1); hari = jumlah hari s
 Catatan: skrip pembentuk `data.json` dari file sumber dibuat di sesi lama dan belum ada di repo. Saat closing November, skrip itu dibuat ulang mengikuti skema di atas lalu ditambahkan ke `build/`.
 
 ## Log update
+- 11 Nov 2026: item fokus GT jadi 15 (tambah 3 HiLo School PLS + HiLo 3in1 Coklat Belgia).
 - 11 Nov 2026: daftar Retail Modern diganti dari 35 outlet dashboard lama menjadi 23 toko non klasifikasi pilihan pengguna.
 - 10 Nov 2026: update November belum closing (transaksi 2–9 Nov). GT Nov Parepare Rp393.102.030 / EA 217; Mamuju Rp39.400.970 / EA 45. Item baru NS MILKY MANGO PLS 4PX40SX11G (kode distributor 17/010102610C, belum ada di mapping NFI → dipetakan manual sebagai Nutrisari GT). `meta.partial = true` → header "Update s.d. … · belum closing".
