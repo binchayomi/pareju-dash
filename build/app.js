@@ -987,7 +987,7 @@ function viewRetail(root) {
     return { n: r.n, cab: CABNAMA[r.cab], seg: r.seg, s: r.sales, tot: t1, avg: t1 / nM, ga: gr(t1 / nM, ly1), gp: gr(t1, lyp), as, pa, pp: div(pa, as), st: as ? 'Sudah order' : 'Belum order' }; });
   table(ds, { download: 'Detail outlet Retail Modern', search: 'Cari outlet', sort: 'tot', cols: [{ k: 'n', l: 'Outlet' }, { k: 'cab', l: 'Cabang' }, { k: 'seg', l: 'Segmen' }, { k: 's', l: 'Salesman' }, { k: 'tot', l: 'Total omzet', f: F.rp, num: 1 }, { k: 'avg', l: 'AVG omzet', f: F.rp, num: 1 },
     { k: 'ga', l: 'Growth AVG', f: F.g, num: 1, cls: (x) => gcls(x.ga) }, { k: 'gp', l: 'Growth periode', f: F.g, num: 1, cls: (x) => gcls(x.gp) }, { k: 'as', l: 'Assortment', num: 1 }, { k: 'pa', l: 'AVG PA', f: F.n1, num: 1 }, { k: 'pp', l: '%PA', f: (v) => F.pct(v), num: 1 }, { k: 'st', l: 'Status', cls: (x) => (x.as ? 'pj-up' : 'pj-down') }], rows,
-    note: 'Daftar 35 outlet Retail Modern diambil dari dashboard lama dan semuanya cocok dengan nama di DATABASE.' });
+    note: 'Daftar Retail Modern = toko non klasifikasi pilihan pengguna (11 Nov 2026): 13 outlet Parepare + 10 outlet Mamuju. Toko klasifikasi (Sejahtera Parepare & Pinrang, Varia Baru Mart, TK Baru Enrekang, Toserba Diana, Sinar Manis Rappang, CV Alam Jaya, Family Mart) tidak termasuk.' });
 }
 
 function viewMisi(root) {
