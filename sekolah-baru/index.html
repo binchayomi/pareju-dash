@@ -24,64 +24,66 @@ html,body{margin:0}
   --bg:#0f141d; --card:#171e2a; --ink:#eef1f7; --muted:#a3adc2; --line:#2a3446;
   --go:#ffab5e; --go-bg:#3d2610; --ok:#5fd9a0; --ok-bg:#12321f; --accent:#8aa8ff; --accent-bg:#1d2948; --ns:#ff9a3d; --hl:#dcaa85; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px}
-.eyebrow{margin:0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
-h1{margin:2px 0 6px;font-size:26px;font-weight:700;line-height:1.25;text-wrap:balance}
-.lead{margin:0;color:var(--muted);font-size:15px}
-.who{font-size:18px;font-weight:600;color:var(--accent)}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;font-size:15px;cursor:pointer}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.45;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding-block:14px 32px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));display:grid;gap:10px}
+.eyebrow{margin:0;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{margin:1px 0 2px;font-size:18px;font-weight:700;line-height:1.3;text-wrap:balance}
+.lead{margin:0;color:var(--muted);font-size:12.5px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.who{font-size:14px;font-weight:600;color:var(--accent)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.chip:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-input[type=search]{width:100%;font:inherit;font-size:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px 14px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid}
-.stat b{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
-.stat span{font-size:14px;color:var(--muted)}
-.list{display:grid;gap:14px}
-.sch{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:12px}
-.nm{margin:0;font-weight:700;font-size:18px;line-height:1.3}
-.sub{font-size:14px;color:var(--muted)}
-.count{display:grid;gap:4px;font-size:15px}
-.count b{font-variant-numeric:tabular-nums}
-.offer{background:var(--go-bg);border-radius:12px;padding:12px 14px;display:grid;gap:8px}
-.offer h3{margin:0;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--go)}
-.offer ol{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-.offer li{display:flex;gap:10px;align-items:center;font-size:17px;font-weight:600}
-.num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--go);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
-.done{background:var(--ok-bg);color:var(--ok);border-radius:12px;padding:12px 14px;font-weight:600}
-.more{all:unset;box-sizing:border-box;cursor:pointer;text-align:center;border:1px solid var(--line);border-radius:12px;padding:11px;font-size:15px;font-weight:600;color:var(--accent)}
-.full{display:grid;gap:14px}
-.grp h4{margin:0 0 4px;font-size:15px}
+.chip:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stats{display:flex;gap:8px}
+.stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 10px;display:flex;align-items:baseline;gap:6px}
+.stat b{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:var(--muted);line-height:1.2}
+input[type=search]{width:100%;font:inherit;font-size:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px}
+.list{display:grid;gap:8px}
+.sch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:8px}
+.hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.nm{margin:0;font-weight:600;font-size:14.5px;line-height:1.3}
+.sub{font-size:11.5px;color:var(--muted)}
+.pa{flex:none;text-align:center;background:var(--accent-bg);color:var(--accent);border-radius:8px;padding:3px 8px;font-weight:700;font-size:15px;line-height:1.1;font-variant-numeric:tabular-nums}
+.pa small{display:block;font-size:9px;font-weight:600}
+.offer{background:var(--go-bg);border-radius:10px;padding:8px 10px;display:grid;gap:5px}
+.offer h3{margin:0;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--go)}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+.og div{display:flex;gap:6px;align-items:center;font-size:12.5px;font-weight:600;line-height:1.25;min-width:0}
+.num{flex:none;width:18px;height:18px;border-radius:50%;background:var(--go);color:#fff;display:grid;place-items:center;font-size:10.5px;font-weight:700}
+.done{background:var(--ok-bg);color:var(--ok);border-radius:10px;padding:8px 10px;font-weight:600;font-size:12.5px}
+.more{all:unset;box-sizing:border-box;cursor:pointer;font-size:12.5px;font-weight:600;color:var(--accent);padding:2px 0}
+.full{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;border-top:1px solid var(--line);padding-top:8px}
+.grp h4{margin:0 0 2px;font-size:12px}
 .grp.ns h4{color:var(--ns)} .grp.hl h4{color:var(--hl)}
-.it{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
-.it:last-child{border-bottom:0}
-.lbl{flex:none;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;letter-spacing:.03em}
-.lbl.ok{background:var(--ok-bg);color:var(--ok)} .lbl.go{background:var(--go-bg);color:var(--go)}
-.it.ok span:first-child{color:var(--muted)}
-.extra{font-size:14px;color:var(--muted)}
-.empty{padding:28px;text-align:center;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:14px}
-.why{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px}
-.why summary{cursor:pointer;font-weight:600;font-size:15px}
-.why ol{margin:6px 0 0;padding-left:22px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:420px){.two{grid-template-columns:1fr}}
+.it{display:flex;gap:6px;align-items:center;padding:3px 0;font-size:12px;line-height:1.25}
+.mk{flex:none;width:16px;height:16px;border-radius:4px;display:grid;place-items:center;font-size:10px;font-weight:700}
+.it.ok .mk{background:var(--ok-bg);color:var(--ok)} .it.go .mk{background:var(--go);color:#fff}
+.it.ok span:last-child{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.extra{grid-column:1/-1;margin:2px 0 0;font-size:11.5px;color:var(--muted)}
+.legend{grid-column:1/-1;font-size:11px;color:var(--muted);display:flex;gap:12px;align-items:center}
+.legend span{display:inline-flex;gap:4px;align-items:center}
+.empty{padding:20px;text-align:center;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:12px;font-size:13px}
+.why{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:12.5px}
+.why summary{cursor:pointer;font-weight:600}
+.why ol{margin:4px 0 0;padding-left:20px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <p class="eyebrow">Sekolah baru Oktober–November 2026</p>
-    <h1>Item yang harus ditawarkan ke sekolah</h1>
-    <p class="lead">Tawarkan item bernomor <b>1</b> dulu, lalu nomor berikutnya. Data sampai <span id="asof"></span>.</p>
+    <h1>Item untuk ditawarkan ke sekolah</h1>
+    <p class="lead">Tawarkan nomor <b>1</b> dulu. Data s.d. <span id="asof"></span>.</p>
   </header>
   <div id="pick"></div>
   <div class="stats" id="stats"></div>
   <input id="q" type="search" placeholder="Cari nama sekolah…" aria-label="Cari nama sekolah">
   <div class="list" id="list"></div>
   <details class="why">
-    <summary>Kenapa urutannya begini?</summary>
+    <summary>Kenapa urutan itemnya begini?</summary>
     <p style="margin:6px 0 0">Urutan diambil dari item yang paling laku di toko (penjualan distributor BCP Parepare &amp; Mamuju tahun 2026). Item yang paling laku ditawarkan lebih dulu.</p>
     <div class="two"><div><b style="color:var(--ns)">10 Nutrisari paling laku</b><ol id="tns"></ol></div><div><b style="color:var(--hl)">8 HiLo paling laku</b><ol id="thl"></ol></div></div>
   </details>
@@ -102,36 +104,36 @@ const SLUG={};D.mds.forEach(m=>SLUG[m]=m.toLowerCase().split(' ').filter(w=>!['m
 D.sch.forEach(s=>{s.have=new Set(s.it.map(r=>r[0]));s.pa=s.it.length;
   s.nsTodo=TN.filter(([k])=>!s.have.has(k)); s.hlTodo=TH.filter(([k])=>!s.have.has(k));
   s.nsHave=TN.length-s.nsTodo.length; s.hlHave=TH.length-s.hlTodo.length;
-  s.offer=[...s.nsTodo.slice(0,2),...s.hlTodo.slice(0,2)].map(x=>x[1]);
+  s.ns2=s.nsTodo.slice(0,2).map(x=>x[1]);s.hl2=s.hlTodo.slice(0,2).map(x=>x[1]);
   s.txt=(s.s+' '+s.kec+' '+s.kan.join(' ')).toLowerCase();});
 const S={m:'ALL',q:'',open:new Set(),locked:false};
 function fromHash(){const h=decodeURIComponent(location.hash.slice(1)).toLowerCase();const m=D.mds.find(x=>SLUG[x]===h);S.m=m||'ALL';S.locked=!!m}
 function drawPick(){const p=document.getElementById('pick');p.textContent='';
-  if(S.locked){p.append(el('div','who','MDS: '+S.m));return}
+  if(S.locked){p.append(el('div','who',S.m));return}
   const c=el('div','chips');['ALL',...D.mds].forEach(m=>{const b=el('button','chip',m==='ALL'?'Semua':m);b.type='button';b.setAttribute('aria-pressed',S.m===m);b.onclick=()=>{S.m=m;drawPick();draw()};c.append(b)});p.append(c)}
 document.getElementById('q').addEventListener('input',e=>{S.q=e.target.value.trim().toLowerCase();draw()});
 function card(s){const c=el('article','sch');
-  const h=el('div');h.append(el('p','nm',s.s),el('div','sub',s.kec+', '+s.kab+(S.m==='ALL'?' · '+s.m:'')));c.append(h);
-  const ct=el('div','count');
-  const l1=el('div');l1.append(document.createTextNode('Item di sekolah ini: '),el('b',null,String(s.pa)));
-  const l2=el('div','sub','Nutrisari laku: '+s.nsHave+' dari '+TN.length+' sudah ada · HiLo laku: '+s.hlHave+' dari '+TH.length+' sudah ada');
-  ct.append(l1,l2);c.append(ct);
-  if(s.offer.length){const o=el('div','offer');o.append(el('h3',null,'Tawarkan sekarang'));const ol=el('ol');
-    s.offer.forEach((n,i)=>{const li=el('li');li.append(el('span','num',String(i+1)),el('span',null,n));ol.append(li)});o.append(ol);c.append(o)}
-  else c.append(el('div','done','Semua item laku sudah ada di sekolah ini. Jaga stoknya.'));
-  const open=S.open.has(s.s);const b=el('button','more',open?'Tutup daftar item':'Lihat semua item');b.type='button';b.setAttribute('aria-expanded',open);
+  const hd=el('div','hd');const h=el('div');h.append(el('p','nm',s.s),el('div','sub',s.kec+(S.m==='ALL'?' · '+s.m:'')+' · NS '+s.nsHave+'/'+TN.length+' · HiLo '+s.hlHave+'/'+TH.length));
+  const pa=el('div','pa',String(s.pa));pa.append(el('small',null,'item'));hd.append(h,pa);c.append(hd);
+  if(s.ns2.length||s.hl2.length){const o=el('div','offer');o.append(el('h3',null,'Tawarkan sekarang'));const g=el('div','og');
+    const L=[];for(let i=0;i<2;i++){L.push(s.ns2[i]);L.push(s.hl2[i]);}
+    let k=0;L.forEach(x=>{const d=el('div');if(x){d.append(el('span','num',String(++k)),el('span',null,x));}g.append(d)});o.append(g);c.append(o)}
+  else c.append(el('div','done','Semua item laku sudah ada. Jaga stoknya.'));
+  const open=S.open.has(s.s);const b=el('button','more',open?'▲ Tutup':'▼ Lihat semua item');b.type='button';b.setAttribute('aria-expanded',open);
   b.onclick=()=>{open?S.open.delete(s.s):S.open.add(s.s);draw()};c.append(b);
   if(open){const f=el('div','full');
+    const lg=el('div','legend');const a1=el('span');a1.append(el('span','mk',''),document.createTextNode('sudah ada'));a1.firstChild.style.cssText='background:var(--ok-bg);color:var(--ok)';a1.firstChild.textContent='✓';
+    const a2=el('span');const m2=el('span','mk','!');m2.style.cssText='background:var(--go);color:#fff';a2.append(m2,document.createTextNode('tawarkan'));lg.append(a1,a2);f.append(lg);
     [['ns','Nutrisari',TN],['hl','HiLo',TH]].forEach(([cls,t,T])=>{const g=el('div','grp '+cls);g.append(el('h4',null,t));
-      T.forEach(([k,n],i)=>{const has=s.have.has(k);const r=el('div','it '+(has?'ok':'go'));r.append(el('span',null,(i+1)+'. '+n),el('span','lbl '+(has?'ok':'go'),has?'SUDAH ADA':'TAWARKAN'));g.append(r)});f.append(g)});
-    const oth=s.it.filter(r=>!topK.has(r[0]));if(oth.length)f.append(el('p','extra','Item lain yang sudah ada: '+oth.map(r=>r[2]).join(', ')));
+      T.forEach(([k,n])=>{const has=s.have.has(k);const r=el('div','it '+(has?'ok':'go'));r.append(el('span','mk',has?'✓':'!'),el('span',null,n.replace(/^(NS|HiLo) /,'')));g.append(r)});f.append(g)});
+    const oth=s.it.filter(r=>!topK.has(r[0]));if(oth.length)f.append(el('p','extra','Item lain: '+oth.map(r=>r[2]).join(', ')));
     f.append(el('p','extra','Kantin: '+s.kan.join(' · ')));c.append(f)}
   return c}
 function draw(){
   const base=D.sch.filter(s=>S.m==='ALL'||s.m===S.m);
   const L=base.filter(s=>!S.q||s.txt.includes(S.q)).sort((a,b)=>a.pa-b.pa||a.s.localeCompare(b.s));
   const st=document.getElementById('stats');st.textContent='';
-  [[String(base.length),'Sekolah baru'],[base.length?n1(base.reduce((a,s)=>a+s.pa,0)/base.length):'–','Rata-rata item per sekolah']].forEach(([b,t])=>{const d=el('div','stat');d.append(el('b',null,b),el('span',null,t));st.append(d)});
+  [[String(base.length),'sekolah baru'],[base.length?n1(base.reduce((a,s)=>a+s.pa,0)/base.length):'–','rata-rata item/sekolah']].forEach(([b,t])=>{const d=el('div','stat');d.append(el('b',null,b),el('span',null,t));st.append(d)});
   const list=document.getElementById('list');list.textContent='';
   if(!L.length){list.append(el('div','empty','Sekolah tidak ditemukan.'));return}
   L.forEach(s=>list.append(card(s)));
