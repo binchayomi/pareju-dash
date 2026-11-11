@@ -62,6 +62,7 @@ Indeks bulan `ym` = (tahun − 2023) × 12 + (bulan − 1); hari = jumlah hari s
 Catatan: skrip pembentuk `data.json` dari file sumber dibuat di sesi lama dan belum ada di repo. Saat closing November, skrip itu dibuat ulang mengikuti skema di atas lalu ditambahkan ke `build/`.
 
 ## Log update
+- 11 Nov 2026: MDS November belum closing (transaksi 2–7 Nov) dari export Appsheet 01.2_SKOR_KPI_-_Monitoring_New_Appsheet_NOV_2026.xlsx (sheet DB Order). 1.062 baris ditambahkan ke `mds` (1 baris BONUS dikeluarkan), omzet Rp20.744.500, EA 315, EA sekolah 52. `meta.mdsLast` = 2026-11-07. Baris diambil dari mds_all.csv di Database Penjualan Pareju; skema baris `mds` = [mds, cust, kab, kec, brand, item, hari, value, valid_omzet, valid_aktivitas, klas, tipe, sek].
 - 11 Nov 2026: item fokus GT jadi 15 (tambah 3 HiLo School PLS + HiLo 3in1 Coklat Belgia).
 - 11 Nov 2026: daftar Retail Modern diganti dari 35 outlet dashboard lama menjadi 23 toko non klasifikasi pilihan pengguna.
 - 10 Nov 2026: update November belum closing (transaksi 2–9 Nov). GT Nov Parepare Rp393.102.030 / EA 217; Mamuju Rp39.400.970 / EA 45. Item baru NS MILKY MANGO PLS 4PX40SX11G (kode distributor 17/010102610C, belum ada di mapping NFI → dipetakan manual sebagai Nutrisari GT). `meta.partial = true` → header "Update s.d. … · belum closing".
